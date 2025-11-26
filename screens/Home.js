@@ -44,7 +44,7 @@ export default function HomeScreen({ navigation }) {
 
         setError('');
         return { base, dest, amtNumber };
- };
+    };
 
     const handleConvert = async () => {
         const values = validateInputs();
@@ -81,5 +81,37 @@ export default function HomeScreen({ navigation }) {
             setResult(null);
             setError(err.message || 'Something went wrong. Please try again.');
         }
- };
+    };
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Currency Converter</Text>
+
+            <Text style={styles.label}>Base currency code</Text>
+            <TextInput
+            style={styles.input}
+            value={baseCurrency}
+            onChangeText={setBaseCurrency}
+            autoCapitalize="characters"
+            maxLength={3}
+            />
+
+            <Text style={styles.label}>Destination currency code</Text>
+            <TextInput
+            style={styles.input}
+            value={destCurrency}
+            onChangeText={setDestCurrency}
+            autoCapitalize="characters"
+            maxLength={3}
+            />
+
+            <Text style={styles.label}>Amount</Text>
+            <TextInput
+            style={styles.input}
+            value={amount}
+            onChangeText={setAmount}
+            keyboardType="numeric"
+            />
+        </View>
+    );
 }    
