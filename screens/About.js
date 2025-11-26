@@ -24,5 +24,11 @@ const styles = StyleSheet.create({
    flex: 1,
    padding: 24,
    justifyContent: 'center',
+},
+ title: {
+   fontSize: 22,
+   fontWeight: 'bold',
+   marginBottom: 16,
+   textAlign: 'center',
  }
 });
