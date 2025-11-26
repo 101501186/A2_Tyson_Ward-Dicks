@@ -8,7 +8,12 @@ export default function AboutScreen({ route }) {
             <Text style={styles.title}>About This App</Text>
 
             <Text style={styles.text}>Name: {name || 'Tyson Ward-Dicks'}</Text>
-            <Text style={styles.text}>Student ID: {studentId || '101501186'}</Text>q
+            <Text style={styles.text}>Student ID: {studentId || '101501186'}</Text>
+
+            <Text style={[styles.text, { marginTop: 16 }]}>
+                This React Native application converts an amount from one currency to
+                another using live exchange rates from FreeCurrencyAPI.
+            </Text>
         </View>
     );
 
