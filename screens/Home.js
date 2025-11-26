@@ -112,6 +112,20 @@ export default function HomeScreen({ navigation }) {
             onChangeText={setAmount}
             keyboardType="numeric"
             />
+
+            <Button title="Convert" onPress={handleConvert} />
+
+            {error ? <Text style={styles.error}>{error}</Text> : null}
+
+            {result !== null && rate !== null && (
+            <View style={styles.resultBox}>
+                <Text>Exchange rate used: {rate}</Text>
+                <Text>
+                {parseFloat(amount).toFixed(2)} {baseCurrency.toUpperCase()} ={' '}
+                {result.toFixed(2)} {destCurrency.toUpperCase()}
+                </Text>
+            </View>
+            )}
         </View>
     );
 }    
