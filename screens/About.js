@@ -8,6 +8,7 @@ export default function AboutScreen({ route }) {
             <Text style={styles.title}>About This App</Text>
 
             <Text style={styles.text}>Name: {name || 'Tyson Ward-Dicks'}</Text>
+            <Text style={styles.text}>Student ID: {studentId || '101501186'}</Text>q
         </View>
     );
 
