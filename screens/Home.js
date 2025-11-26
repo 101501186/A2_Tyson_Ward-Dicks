@@ -148,4 +148,10 @@ const styles = StyleSheet.create({
    padding: 24,
    justifyContent: 'center',
  },
+ title: {
+   fontSize: 24,
+   fontWeight: 'bold',
+   marginBottom: 24,
+   textAlign: 'center',
+ },
 });
