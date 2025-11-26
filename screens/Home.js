@@ -45,4 +45,41 @@ export default function HomeScreen({ navigation }) {
         setError('');
         return { base, dest, amtNumber };
  };
+
+    const handleConvert = async () => {
+        const values = validateInputs();
+        if (!values) return;
+
+        const { base, dest, amtNumber } = values;
+
+        try {
+            const url = `https://api.freecurrencyapi.com/v1/latest?apikey=${API_KEY}&base_currency=${base}&currencies=${dest}`;
+            const response = await fetch(url);
+
+            if (!response.ok) {
+            throw new Error('Network error: ' + response.status);
+            }
+
+            const json = await response.json();
+
+            // handle API-level errors (invalid key, etc.)
+            if (json.error) {
+            throw new Error(json.error.message || 'API error.');
+            }
+
+            const rateValue = json.data && json.data[dest];
+            if (!rateValue) {
+            throw new Error('Exchange rate for that currency was not found.');
+            }
+
+            const converted = amtNumber * rateValue;
+            setRate(rateValue);
+            setResult(converted);
+            setError('');
+        } catch (err) {
+            setRate(null);
+            setResult(null);
+            setError(err.message || 'Something went wrong. Please try again.');
+        }
+ };
 }    
