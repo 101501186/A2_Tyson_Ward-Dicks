@@ -126,6 +126,18 @@ export default function HomeScreen({ navigation }) {
                 </Text>
             </View>
             )}
+
+            <View style={{ marginTop: 24 }}>
+                <Button
+                    title="About"
+                    onPress={() =>
+                    navigation.navigate('About', {
+                        name: 'Tyson Ward-Dicks',
+                        studentId: '101501186',
+                    })
+                    }
+                />
+            </View>
         </View>
     );
 }    
