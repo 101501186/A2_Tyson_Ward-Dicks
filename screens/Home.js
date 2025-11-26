@@ -154,4 +154,24 @@ const styles = StyleSheet.create({
    marginBottom: 24,
    textAlign: 'center',
  },
+ label: {
+   marginTop: 8,
+   marginBottom: 4,
+ },
+ input: {
+   borderWidth: 1,
+   borderColor: '#888',
+   borderRadius: 4,
+   paddingHorizontal: 8,
+   paddingVertical: 6,
+   marginBottom: 8,
+ },
+ error: {
+   marginTop: 12,
+   color: 'red',
+ },
+ resultBox: {
+   marginTop: 16,
+   alignItems: 'center',
+ },
 });
